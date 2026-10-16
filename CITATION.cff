@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Public Acceptance of AI-Supported Healthcare: supporting materials (survey instrument and analysis code)"
+type: software
+authors:
+  - family-names: "Seba"
+    given-names: "Yasmin"
+date-released: "2026-10-19"
+repository-code: "https://github.com/abesmiyas-glitch/Public_Acceptance_of_AI_in_Healthcare.git"
+license: MIT

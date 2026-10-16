@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+# the original (non-anonymised) export must never be committed
+data/responses.csv
+data/responses.xlsx

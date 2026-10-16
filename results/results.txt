@@ -1,0 +1,505 @@
+Run info: Analysis date 2026-10-15; Data file responses.csv; Python 3.13.5; pandas 3.0.6; numpy 2.4.6; scipy 1.15.3; statsmodels 0.15.0; pingouin 0.7.0; matplotlib 3.11.2
+Loaded 104 rows, 33 columns from responses.csv  (the file itself is never modified)
+Consent answers found in the file (value: count):
+I confirm that I’m 18 or older and agree to participate : 
+Yes (proceed)      103
+No (end survey)      1
+  -> 'Yes ...' = consent (kept); 'No ...' or empty = no consent (removed)
+Consent question found: 1 respondent(s) did not consent -> removed
+
+Headers have no question codes -> mapped by position. CHECK this mapping:
+  Q1.1  <- Age group :
+  Q1.2  <- Gender :
+  Q1.3  <- Highest educational level : 
+  Q1.4  <- How would you describe your general experience with AI tools (Chatgpt, Gemini, Claude
+  Q1.5  <- Have you used any AI-based health tools before (Health chatbots, symptoms checkers …)
+  Q2.1  <- Ai-based healthcare tools used for symptoms checking, diagnostic assistance and treat
+  Q2.2  <- AI-based healthcare tools can be as accurate as a healthcare professional for basic a
+  Q2.3  <- AI-based healthcare tools often give incorrect information
+  Q2.4  <- AI-based healthcare tools clearly explain the reasoning behind their output
+  Q2.5  <- I understand how AI-based healthcare tools arrive at their conclusions.
+  Q2.6  <- The way AI-based healthcare tools generate their outputs feels like a ‘’black box‘’ t
+  Q2.7  <- I trust AI-based healthcare tools to provide reliable information.
+  Q2.8  <- I trust the advice provided by an AI-based healthcare tool.
+  Q2.9  <- I would be sceptical to rely on information provided by AI-based healthcare tools.
+  Q2.10 <- I would be willing to receive healthcare from a professional who uses AI-based health
+  Q2.11 <- I would accept a healthcare professional to use AI-based healthcare tools as a suppor
+  Q3.1  <- I would consider the use of AI-based healthcare tools as a support tool by a physicia
+  Q3.2  <- I will accept receiving care from a physician who uses AI-based healthcare tools as a
+  Q3.3  <- I would consider the use of AI-based healthcare tools as a support tool by a nurse ac
+  Q3.4  <- I will accept receiving care from a nurse who uses AI-based healthcare tools as a sup
+  Q3.5  <- I would consider the use of AI-based healthcare tools as a support tool by a dentist 
+  Q3.6  <- I will accept receiving care from a dentist who uses AI-based healthcare tools as a s
+  Q3.7  <- I would consider the use of AI-based healthcare tools as a support tool by a pharmaci
+  Q3.8  <- I will accept receiving care from a pharmacist who uses AI-based healthcare tools as 
+  Q4.1  <- I trust healthcare providers to make accurate diagnoses and assessment
+  Q4.2  <- I trust healthcare providers to make appropriate decisions about my healthcare
+  Q4.3  <- ‘’ Now imagine your healthcare provider telling you that they used AI for diagnosis a
+  Q4.4  <- ‘’ Now imagine your healthcare provider telling you that they used AI for diagnosis a
+  Q5.1  <- A healthcare provider who uses AI-based healthcare tools is less trustworthy than a h
+  Q5.2  <- Which would you prefer ? 
+  Q5.3  <- Open text : Is there anything about the use of AI in healthcare that concerns or reas
+
+Column mapping (question code <- start of the header; all 31 are checked against the expected wording):
+  OK  Q1.1  <- Age group :
+  OK  Q1.2  <- Gender :
+  OK  Q1.3  <- Highest educational level : 
+  OK  Q1.4  <- ribe your general experience with AI tools (Chatgpt, Gemini, Claude) ?
+  OK  Q1.5  <-  AI-based health tools before (Health chatbots, symptoms checkers …) ?
+  OK  Q2.1  <- e and treatment recommendation generally provide accurate information.
+  OK  Q2.2  <-  can be as accurate as a healthcare professional for basic assessment.
+  OK  Q2.3  <- AI-based healthcare tools often give incorrect information
+  OK  Q2.4  <- sed healthcare tools clearly explain the reasoning behind their output
+  OK  Q2.5  <-  understand how AI-based healthcare tools arrive at their conclusions.
+  OK  Q2.6  <- thcare tools generate their outputs feels like a ‘’black box‘’ to me :
+  OK  Q2.7  <- I trust AI-based healthcare tools to provide reliable information.
+  OK  Q2.8  <- I trust the advice provided by an AI-based healthcare tool.
+  OK  Q2.9  <- ceptical to rely on information provided by AI-based healthcare tools.
+  OK  Q2.10 <- m a professional who uses AI-based healthcare tools as a support tool.
+  OK  Q2.11 <- hcare professional to use AI-based healthcare tools as a support tool.
+  OK  Q3.1  <- AI-based healthcare tools as a support tool by a physician acceptable.
+  OK  Q3.2  <- from a physician who uses AI-based healthcare tools as a support tool.
+  OK  Q3.3  <-  of AI-based healthcare tools as a support tool by a nurse acceptable.
+  OK  Q3.4  <- are from a nurse who uses AI-based healthcare tools as a support tool.
+  OK  Q3.5  <- f AI-based healthcare tools as a support tool by a dentist acceptable.
+  OK  Q3.6  <- e from a dentist who uses AI-based healthcare tools as a support tool.
+  OK  Q3.7  <- I-based healthcare tools as a support tool by a pharmacist acceptable.
+  OK  Q3.8  <- rom a pharmacist who uses AI-based healthcare tools as a support tool.
+  OK  Q4.1  <- I trust healthcare providers to make accurate diagnoses and assessment
+  OK  Q4.2  <- healthcare providers to make appropriate decisions about my healthcare
+  OK  Q4.3  <-  trust healthcare providers to make accurate diagnoses and assessment.
+  OK  Q4.4  <- healthcare providers to make appropriate decisions about my healthcare
+  OK  Q5.1  <- hcare tools is less trustworthy than a healthcare provider who doesn’t
+  OK  Q5.2  <- Which would you prefer ? 
+  OK  Q5.3  <- g about the use of AI in healthcare that concerns or reassures you ?  
+All 31 columns match the expected questions.
+CHECK: duplicated answer rows (identical in every question): 0
+Prior-AI-experience variable for RQ4 = Q1.4
+
+CHECK: missing or unreadable Likert answers per item (should be 0 for the core items):
+Q5.1    1
+CHECK: respondents missing at least one core item: 0
+CHECK: all non-missing Likert values are within 1-5.
+
+Dropped 0 rows with missing/unreadable Likert answers -> N = 103
+Rows with the identical raw answer to all of Q2.1-Q2.9 (includes reverse items): 1
+                                                 Step   n
+                                         Rows in file 104
+                            Did not consent (removed)   1
+                                            Consented 103
+                 Dropped: missing core Likert answers   0
+Dropped: straightliners (only if DROP_STRAIGHTLINERS)   0
+                                              Final N 103
+Reverse scoring (6 - x) applied to ['Q2.3', 'Q2.6', 'Q2.9'] | means before: {'Q2.3': 3.18, 'Q2.6': 3.22, 'Q2.9': 3.71} | after: {'Q2.3': 2.82, 'Q2.6': 2.78, 'Q2.9': 2.29}
+
+==============================================================================
+SAMPLE DESCRIPTION
+==============================================================================
+Final N = 103
+                         Variable                    Level  n    %
+                        Age group                 Under 25 44 42.7
+                        Age group                    25-40 43 41.7
+                        Age group                    41-59 15 14.6
+                        Age group                      60+  1  1.0
+                           Gender                   Female 48 46.6
+                           Gender                     Male 46 44.7
+                           Gender        Prefer not to say  9  8.7
+                        Education     High school or below 24 23.3
+                        Education        Bachelor's degree 50 48.5
+                        Education Master's degree or above 28 27.2
+                        Education                    Other  1  1.0
+General AI tool experience (Q1.4)               Rare/never  5  4.9
+General AI tool experience (Q1.4)               Occasional 46 44.7
+General AI tool experience (Q1.4)                  Regular 49 47.6
+        AI health tool use (Q1.5)               Rare/never 50 48.5
+        AI health tool use (Q1.5)               Occasional 44 42.7
+        AI health tool use (Q1.5)                  Regular  9  8.7
+                         Variable      Level  n   %
+                        Age group        60+  1 1.0
+                        Education      Other  1 1.0
+General AI tool experience (Q1.4) Rare/never  5 4.9
+        AI health tool use (Q1.5)    Regular  9 8.7
+
+==============================================================================
+RELIABILITY (after reverse-scoring Q2.3, Q2.6, Q2.9)
+==============================================================================
+           Scale  Items  Cronbach_alpha  CI_low  CI_high  Mean_inter_item_r  Spearman_Brown
+        Accuracy      3           0.624   0.478    0.734              0.356             NaN
+    Transparency      3           0.694   0.575    0.784              0.428             NaN
+           Trust      3           0.685   0.563    0.777              0.424             NaN
+      Acceptance      2           0.864   0.799    0.908              0.761           0.864
+   Acc_Physician      2           0.948   0.923    0.965              0.901           0.948
+       Acc_Nurse      2           0.941   0.913    0.960              0.890           0.942
+     Acc_Dentist      2           0.982   0.973    0.988              0.965           0.982
+  Acc_Pharmacist      2           0.928   0.894    0.952              0.867           0.929
+  Trust_Baseline      2           0.916   0.876    0.943              0.845           0.916
+Trust_Disclosure      2           0.909   0.866    0.939              0.837           0.911
+
+For 2-item scales report the inter-item r (and Spearman-Brown) rather than alpha.
+
+Alpha if item deleted (3-item scales; a reverse-worded item that lowers alpha is a typical cause of low alpha):
+  Accuracy: -Q2.1: 0.292, -Q2.2: 0.502, -Q2.3: 0.711
+  Transparency: -Q2.4: 0.495, -Q2.5: 0.501, -Q2.6: 0.762
+  Trust: -Q2.7: 0.463, -Q2.8: 0.504, -Q2.9: 0.773
+
+==============================================================================
+RQ2 -- Descriptive statistics
+==============================================================================
+              count   mean    std    min    max   skew   kurt
+Accuracy      103.0  2.841  0.752  1.000  4.333 -0.129 -0.829
+Transparency  103.0  2.922  0.754  1.333  4.333  0.073 -0.943
+Trust         103.0  2.508  0.744  1.000  4.000  0.024 -0.529
+Acceptance    103.0  3.131  1.007  1.000  5.000 -0.338 -1.022
+
+Item-level means (Q2.3, Q2.6, Q2.9 already reverse-scored):
+       mean   std
+Q2.1   3.02  0.95
+Q2.2   2.69  1.12
+Q2.3   2.82  0.90
+Q2.4   3.01  0.93
+Q2.5   2.98  1.02
+Q2.6   2.78  0.92
+Q2.7   2.64  0.90
+Q2.8   2.59  0.98
+Q2.9   2.29  0.97
+Q2.10  3.09  1.09
+Q2.11  3.17  1.06
+
+==============================================================================
+RQ1 -- Pearson correlations with Acceptance
+==============================================================================
+   Predictor   n     r         CI95            p
+    Accuracy 103 0.539 [0.39, 0.66] 4.368888e-09
+Transparency 103 0.231 [0.04, 0.41] 1.903801e-02
+       Trust 103 0.538 [0.39, 0.66] 4.443160e-09
+
+Full correlation matrix:
+              Accuracy  Transparency  Trust  Acceptance
+Accuracy         1.000         0.283  0.696       0.539
+Transparency     0.283         1.000  0.364       0.231
+Trust            0.696         0.364  1.000       0.538
+Acceptance       0.539         0.231  0.538       1.000
+
+==============================================================================
+RQ1 -- Multiple regression: Acceptance ~ Accuracy + Transparency + Trust
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             Acceptance   R-squared:                       0.343
+Model:                            OLS   Adj. R-squared:                  0.323
+Method:                 Least Squares   F-statistic:                     17.21
+Date:                Thu, 15 Oct 2026   Prob (F-statistic):           4.54e-09
+Time:                        15:24:35   Log-Likelihood:                -124.78
+No. Observations:                 103   AIC:                             257.6
+Df Residuals:                      99   BIC:                             268.1
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            0.7696      0.401      1.918      0.058      -0.027       1.566
+Accuracy         0.4233      0.152      2.782      0.006       0.121       0.725
+Transparency     0.0388      0.117      0.332      0.740      -0.193       0.271
+Trust            0.4168      0.159      2.629      0.010       0.102       0.731
+==============================================================================
+Omnibus:                        1.172   Durbin-Watson:                   1.977
+Prob(Omnibus):                  0.556   Jarque-Bera (JB):                0.801
+Skew:                           0.204   Prob(JB):                        0.670
+Kurtosis:                       3.140   Cond. No.                         25.1
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R2 = 0.343, adj. R2 = 0.323, F(3, 99) = 17.21, p = 4.54e-09, N = 103
+
+VIF (concern if > 5):
+   Predictor   VIF
+    Accuracy 1.945
+Transparency 1.155
+       Trust 2.063
+Shapiro-Wilk on residuals: W = 0.989, p = 0.592
+Breusch-Pagan (homoscedasticity): LM = 5.160, p = 0.160
+Durbin-Watson: 1.977  (little informative for a cross-sectional survey with one row per respondent; the rows have no meaningful order)
+Cook's distance: max = 0.118; cases above 4/N (0.039): 7; cases above 1: 0
+
+Sensitivity: heteroscedasticity-robust (HC3) p-values: Accuracy p = 0.0243, Transparency p = 0.7575, Trust p = 0.0115
+
+==============================================================================
+RQ4 -- Extended regression: background factors added to the RQ1 model
+==============================================================================
+Reference categories: age = Under 25, education = High school or below, AI experience = Rare/never
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             Acceptance   R-squared:                       0.413
+Model:                            OLS   Adj. R-squared:                  0.347
+Method:                 Least Squares   F-statistic:                     6.259
+Date:                Thu, 15 Oct 2026   Prob (F-statistic):           3.43e-07
+Time:                        15:24:36   Log-Likelihood:                -113.10
+No. Observations:                 100   AIC:                             248.2
+Df Residuals:                      89   BIC:                             276.8
+Df Model:                          10                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================================================================================
+                                                                                            coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                 0.3744      0.534      0.701      0.485      -0.686       1.435
+C(Age_group, Treatment(reference="Under 25"))[T.25-40]                                    0.0932      0.198      0.471      0.639      -0.300       0.486
+C(Age_group, Treatment(reference="Under 25"))[T.41-59]                                   -0.2753      0.276     -0.999      0.321      -0.823       0.272
+C(Education, Treatment(reference="High school or below"))[T.Bachelor's degree]            0.1191      0.214      0.556      0.579      -0.306       0.545
+C(Education, Treatment(reference="High school or below"))[T.Master's degree or above]    -0.1361      0.266     -0.512      0.610      -0.665       0.392
+C(Education, Treatment(reference="High school or below"))[T.Other]                        0.5689      0.850      0.669      0.505      -1.120       2.258
+C(AI_exp, Treatment(reference="Rare/never"))[T.Occasional]                                0.4485      0.385      1.164      0.248      -0.317       1.214
+C(AI_exp, Treatment(reference="Rare/never"))[T.Regular]                                   0.7115      0.395      1.801      0.075      -0.073       1.497
+Accuracy                                                                                  0.4038      0.153      2.646      0.010       0.101       0.707
+Transparency                                                                             -0.0128      0.116     -0.111      0.912      -0.242       0.217
+Trust                                                                                     0.4307      0.158      2.719      0.008       0.116       0.745
+==============================================================================
+Omnibus:                        0.653   Durbin-Watson:                   1.864
+Prob(Omnibus):                  0.721   Jarque-Bera (JB):                0.663
+Skew:                           0.187   Prob(JB):                        0.718
+Kurtosis:                       2.863   Cond. No.                         55.2
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Base R2 = 0.342; extended R2 = 0.413; change = 0.071
+Nested-model F test (do the background factors add anything?):
+   df_resid        ssr  df_diff   ss_diff         F    Pr(>F)
+0      96.0  63.024763      0.0       NaN       NaN       NaN
+1      89.0  56.216070      7.0  6.808692  1.539909  0.164187
+
+SUPPLEMENTARY extended model using Q1.5 (AI health tool use) instead of the primary experience variable (N = 103):
+=========================================================================================================================================================
+                                                                                            coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                 0.9097      0.449      2.027      0.046       0.018       1.801
+C(Age_group, Treatment(reference="Under 25"))[T.25-40]                                   -0.0072      0.199     -0.036      0.971      -0.403       0.389
+C(Age_group, Treatment(reference="Under 25"))[T.41-59]                                   -0.4643      0.265     -1.750      0.084      -0.991       0.063
+C(Age_group, Treatment(reference="Under 25"))[T.60+]                                     -1.8536      0.842     -2.202      0.030      -3.526      -0.181
+C(Education, Treatment(reference="High school or below"))[T.Bachelor's degree]            0.1395      0.218      0.640      0.524      -0.293       0.572
+C(Education, Treatment(reference="High school or below"))[T.Master's degree or above]    -0.0102      0.261     -0.039      0.969      -0.529       0.508
+C(Education, Treatment(reference="High school or below"))[T.Other]                        0.8226      0.861      0.956      0.342      -0.887       2.533
+C(AI_health, Treatment(reference="Rare/never"))[T.Occasional]                            -0.0065      0.185     -0.035      0.972      -0.373       0.360
+C(AI_health, Treatment(reference="Rare/never"))[T.Regular]                                0.1826      0.322      0.567      0.572      -0.457       0.822
+Accuracy                                                                                  0.4517      0.153      2.948      0.004       0.147       0.756
+Transparency                                                                             -0.0391      0.120     -0.327      0.745      -0.277       0.199
+Trust                                                                                     0.4206      0.167      2.525      0.013       0.090       0.751
+=========================================================================================================================================================
+Base R2 = 0.343; extended R2 = 0.417; change = 0.074; F p = 0.1885
+
+==============================================================================
+RQ3 -- Acceptance across professions (within-subjects)
+==============================================================================
+                count   mean    std  min  max   skew
+Acc_Physician   103.0  3.155  1.000  1.0  5.0 -0.514
+Acc_Nurse       103.0  3.000  1.080  1.0  5.0 -0.226
+Acc_Dentist     103.0  2.820  1.107  1.0  5.0  0.013
+Acc_Pharmacist  103.0  2.951  1.077  1.0  5.0 -0.214
+
+Shapiro-Wilk per profession (informational; RM-ANOVA is fairly robust at this N):
+  Acc_Physician    W = 0.891, p = 0.000
+  Acc_Nurse        W = 0.885, p = 0.000
+  Acc_Dentist      W = 0.901, p = 0.000
+  Acc_Pharmacist   W = 0.888, p = 0.000
+
+Repeated-measures ANOVA (sphericity test and Greenhouse-Geisser correction included):
+    Source         SS  DF       MS        F    p_unc  p_GG_corr      np2      eps sphericity  W_spher  p_spher
+Profession   5.914442   3 1.971481 5.723759 0.000802   0.000902 0.053134 0.974637       True 0.959787 0.530296
+     Error 105.398058 306 0.344438      NaN      NaN        NaN      NaN      NaN        NaN      NaN      NaN
+Mauchly's test of sphericity: W = 0.960, chi2 = 4.13, df = 5, p = 0.5303 -> not violated
+Greenhouse-Geisser epsilon = 0.975
+
+Omnibus p used for the decision: 0.0008016 (uncorrected, sphericity not violated)
+
+Post-hoc paired t-tests, Bonferroni-corrected:
+  Contrast          A          B  Paired  Parametric         T   dof alternative    p_unc   p_corr p_adjust    BF10     cohen
+Profession    Dentist      Nurse    True        True -2.348945 102.0   two-sided 0.020754 0.124525     bonf   1.497 -0.164255
+Profession    Dentist Pharmacist    True        True -1.727457 102.0   two-sided 0.087112 0.522674     bonf   0.457 -0.120045
+Profession    Dentist  Physician    True        True -4.172775 102.0   two-sided 0.000063 0.000380     bonf 277.915 -0.317570
+Profession      Nurse Pharmacist    True        True  0.575473 102.0   two-sided 0.566239 1.000000     bonf   0.128  0.045013
+Profession      Nurse  Physician    True        True -1.838352 102.0   two-sided 0.068921 0.413523     bonf   0.551 -0.149241
+Profession Pharmacist  Physician    True        True -2.304709 102.0   two-sided 0.023209 0.139254     bonf   1.361 -0.196208
+
+ROBUSTNESS CHECK ONLY -- Friedman test:
+              Source         W  ddof1          Q     p_unc
+Friedman  Profession  0.061985      3  19.153361  0.000254
+
+==============================================================================
+RQ4
+==============================================================================
+
+(All RQ4 tests are one-way ANOVAs on the unmerged groups; the effect size is partial eta-squared.)
+     Outcome                    Factor          Test  Statistic     df        p  Effect_size    Effect_size_type  p_Holm_adjusted
+    Accuracy                 Age group One-way ANOVA      0.727  3, 99 0.538518        0.022 partial eta-squared         1.000000
+    Accuracy                 Education One-way ANOVA      0.714  3, 99 0.546061        0.021 partial eta-squared         1.000000
+    Accuracy AI tool experience (Q1.4) One-way ANOVA      0.423  2, 97 0.656450        0.009 partial eta-squared         1.000000
+    Accuracy AI health tool use (Q1.5) One-way ANOVA      4.987 2, 100 0.008616        0.091 partial eta-squared         0.129247
+Transparency                 Age group One-way ANOVA      0.942  3, 99 0.423614        0.028 partial eta-squared         1.000000
+Transparency                 Education One-way ANOVA      0.188  3, 99 0.904214        0.006 partial eta-squared         1.000000
+Transparency AI tool experience (Q1.4) One-way ANOVA      0.540  2, 97 0.584366        0.011 partial eta-squared         1.000000
+Transparency AI health tool use (Q1.5) One-way ANOVA      2.107 2, 100 0.126935        0.040 partial eta-squared         1.000000
+       Trust                 Age group One-way ANOVA      0.404  3, 99 0.750177        0.012 partial eta-squared         1.000000
+       Trust                 Education One-way ANOVA      0.796  3, 99 0.498971        0.024 partial eta-squared         1.000000
+       Trust AI tool experience (Q1.4) One-way ANOVA      1.275  2, 97 0.284169        0.026 partial eta-squared         1.000000
+       Trust AI health tool use (Q1.5) One-way ANOVA     11.144 2, 100 0.000043        0.182 partial eta-squared         0.000684
+  Acceptance                 Age group One-way ANOVA      2.426  3, 99 0.070089        0.068 partial eta-squared         0.841073
+  Acceptance                 Education One-way ANOVA      0.113  3, 99 0.952414        0.003 partial eta-squared         1.000000
+  Acceptance AI tool experience (Q1.4) One-way ANOVA      3.787  2, 97 0.026084        0.072 partial eta-squared         0.339093
+  Acceptance AI health tool use (Q1.5) One-way ANOVA      4.395 2, 100 0.014810        0.081 partial eta-squared         0.207346
+
+Holm-adjusted p-values are shown because many exploratory tests were run; report them alongside the raw p-values.
+
+==============================================================================
+RQ4 -- Robustness check: Levene and Welch ANOVA (all four factors)
+==============================================================================
+  Welch ANOVA not computable for Accuracy ~ Age group: a group has n = 1 (its variance is undefined)
+  Welch ANOVA not computable for Accuracy ~ Education: a group has n = 1 (its variance is undefined)
+
+Games-Howell for Accuracy by AI health tool use (Q1.5):
+         A          B   mean_A   mean_B      diff       se         T        df     pval    hedges
+Occasional Rare/never 3.007576 2.620000  0.387576 0.145872  2.656962 91.836550 0.024977  0.541677
+Occasional    Regular 3.007576 3.259259 -0.251684 0.310044 -0.811767 10.029787 0.704527 -0.348380
+Rare/never    Regular 2.620000 3.259259 -0.639259 0.310836 -2.056579 10.133742 0.148512 -0.831043
+  Welch ANOVA not computable for Transparency ~ Age group: a group has n = 1 (its variance is undefined)
+  Welch ANOVA not computable for Transparency ~ Education: a group has n = 1 (its variance is undefined)
+  Welch ANOVA not computable for Trust ~ Age group: a group has n = 1 (its variance is undefined)
+  Welch ANOVA not computable for Trust ~ Education: a group has n = 1 (its variance is undefined)
+
+Games-Howell for Trust by AI health tool use (Q1.5):
+         A          B   mean_A   mean_B      diff       se         T        df     pval    hedges
+Occasional Rare/never 2.734848 2.200000  0.534848 0.138647  3.857619 91.492150 0.000619  0.788086
+Occasional    Regular 2.734848 3.111111 -0.376263 0.267260 -1.407855 10.662587 0.371424 -0.554480
+Rare/never    Regular 2.200000 3.111111 -0.911111 0.266931 -3.413282 10.617740 0.015385 -1.287900
+  Welch ANOVA not computable for Acceptance ~ Age group: a group has n = 1 (its variance is undefined)
+  Welch ANOVA not computable for Acceptance ~ Education: a group has n = 1 (its variance is undefined)
+
+Games-Howell for Acceptance by AI health tool use (Q1.5):
+         A          B   mean_A   mean_B      diff       se         T        df     pval    hedges
+Occasional Rare/never 3.295455 2.870000  0.425455 0.201963  2.106594 91.948537 0.094062  0.427677
+Occasional    Regular 3.295455 3.777778 -0.482323 0.309425 -1.558775 12.185894 0.299486 -0.531841
+Rare/never    Regular 2.870000 3.777778 -0.907778 0.315225 -2.879780 13.090243 0.032133 -0.873386
+     Outcome                    Factor  Levene_p  Welch_F  df1  df2      p  partial_eta2
+    Accuracy                 Age group       NaN      NaN  NaN  NaN    NaN           NaN
+    Accuracy                 Education       NaN      NaN  NaN  NaN    NaN           NaN
+    Accuracy AI tool experience (Q1.4)     0.640    0.375  2.0 11.1 0.6953         0.009
+    Accuracy AI health tool use (Q1.5)     0.682    4.460  2.0 21.7 0.0239         0.091
+Transparency                 Age group       NaN      NaN  NaN  NaN    NaN           NaN
+Transparency                 Education       NaN      NaN  NaN  NaN    NaN           NaN
+Transparency AI tool experience (Q1.4)     0.502    0.704  2.0 11.7 0.5146         0.011
+Transparency AI health tool use (Q1.5)     0.706    2.530  2.0 23.7 0.1010         0.040
+       Trust                 Age group       NaN      NaN  NaN  NaN    NaN           NaN
+       Trust                 Education       NaN      NaN  NaN  NaN    NaN           NaN
+       Trust AI tool experience (Q1.4)     0.432    0.945  2.0 10.9 0.4183         0.026
+       Trust AI health tool use (Q1.5)     0.910   10.269  2.0 22.2 0.0007         0.182
+  Acceptance                 Age group       NaN      NaN  NaN  NaN    NaN           NaN
+  Acceptance                 Education       NaN      NaN  NaN  NaN    NaN           NaN
+  Acceptance AI tool experience (Q1.4)     0.760    2.512  2.0 10.7 0.1273         0.072
+  Acceptance AI health tool use (Q1.5)     0.041    4.707  2.0 24.0 0.0189         0.081
+
+Tukey post-hoc, run for every ANOVA with unadjusted p < .05 (decision rule fixed in advance; ALL of these are EXPLORATORY).
+Only comparisons whose omnibus test also survives the Holm adjustment (column Omnibus_survives_Holm = yes) may be
+interpreted beyond hypothesis generation; Tukey controls the error rate within one ANOVA, not across the 16 tests.
+   Outcome                    Factor          A          B   mean_A   mean_B      diff       se         T  p_tukey    hedges  Omnibus_p_unadjusted  Omnibus_p_Holm Omnibus_survives_Holm
+  Accuracy AI health tool use (Q1.5) Occasional Rare/never 3.007576 2.620000  0.387576 0.149781  2.587618 0.029622  0.541677              0.008616        0.129247 NO - exploratory only
+  Accuracy AI health tool use (Q1.5) Occasional    Regular 3.007576 3.259259 -0.251684 0.265091 -0.949425 0.610436 -0.348380              0.008616        0.129247 NO - exploratory only
+  Accuracy AI health tool use (Q1.5) Rare/never    Regular 2.620000 3.259259 -0.639259 0.262376 -2.436427 0.043459 -0.831043              0.008616        0.129247 NO - exploratory only
+     Trust AI health tool use (Q1.5) Occasional Rare/never 2.734848 2.200000  0.534848 0.140391  3.809712 0.000698  0.788086              0.000043        0.000684                   yes
+     Trust AI health tool use (Q1.5) Occasional    Regular 2.734848 3.111111 -0.376263 0.248471 -1.514310 0.288581 -0.554480              0.000043        0.000684                   yes
+     Trust AI health tool use (Q1.5) Rare/never    Regular 2.200000 3.111111 -0.911111 0.245927 -3.704807 0.001004 -1.287900              0.000043        0.000684                   yes
+Acceptance AI tool experience (Q1.4) Occasional Rare/never 3.043478 2.200000  0.843478 0.450587  1.871954 0.152350  0.855177              0.026084        0.339093 NO - exploratory only
+Acceptance AI tool experience (Q1.4) Occasional    Regular 3.043478 3.346939 -0.303461 0.196446 -1.544756 0.274757 -0.320531              0.026084        0.339093 NO - exploratory only
+Acceptance AI tool experience (Q1.4) Rare/never    Regular 2.200000 3.346939 -1.146939 0.449233 -2.553106 0.032499 -1.159656              0.026084        0.339093 NO - exploratory only
+Acceptance AI health tool use (Q1.5) Occasional Rare/never 3.295455 2.870000  0.425455 0.201599  2.110403 0.092839  0.427677              0.014810        0.207346 NO - exploratory only
+Acceptance AI health tool use (Q1.5) Occasional    Regular 3.295455 3.777778 -0.482323 0.356801 -1.351801 0.370190 -0.531841              0.014810        0.207346 NO - exploratory only
+Acceptance AI health tool use (Q1.5) Rare/never    Regular 2.870000 3.777778 -0.907778 0.353146 -2.570542 0.030963 -0.873386              0.014810        0.207346 NO - exploratory only
+
+==============================================================================
+RQ5 -- Provider trust: baseline vs after AI disclosure (paired-samples t-test)
+==============================================================================
+Baseline:   M = 3.782, SD = 0.702
+Disclosure: M = 2.680, SD = 0.977
+Mean difference (disclosure - baseline) = -1.102, 95% CI [-1.315, -0.889]
+t(102) = -10.260, p = 2.16e-17, Cohen's dz = -1.011
+Shapiro-Wilk on difference scores: p = 0.000
+
+ROBUSTNESS CHECK ONLY -- Wilcoxon signed-rank:
+          W_val alternative         p_val       RBC      CLES
+Wilcoxon  134.5   two-sided  1.366236e-12  0.912691  0.804081
+
+Item-level paired tests (supplementary):
+  Accurate diagnoses (Q4.1 vs Q4.3): M 3.77 -> 2.72, t = -9.33, p = 2.504e-15
+  Appropriate decisions (Q4.2 vs Q4.4): M 3.80 -> 2.64, t = -10.17, p = 3.377e-17
+
+==============================================================================
+SECTION 5 -- Overall reflection (descriptive, supplementary)
+==============================================================================
+Sample for the Section 5 items: all 103 consented respondents with a valid answer (core items use N = 103).
+Q5.1 'AI-using provider is LESS trustworthy' (higher = more agreement): n = 102, M = 3.25, SD = 1.14
+Q5.1
+1.0     7
+2.0    21
+3.0    27
+4.0    33
+5.0    14
+
+Q5.2 preference:
+                                                     n     %
+Q5.2                                                        
+My healthcare provider uses AI-based healthcare...  48  46.6
+My healthcare provider uses no AI at all            43  41.7
+I have no preference                                12  11.7
+
+Q5.3 open-text answers: 29 (saved to open_text_responses.csv for thematic coding)
+
+==============================================================================
+SUPPLEMENTARY DESCRIPTIVES AND FIGURES
+==============================================================================
+Item-level agreement (Q2.3, Q2.6, Q2.9 after reverse scoring; (R) = reverse-worded; Q5.1 is not reversed):
+ Item   n  Mean  % Disagree (1-2)  % Neutral (3)  % Agree (4-5)
+ Q2.1 103  3.02              33.0           28.2           38.8
+ Q2.2 103  2.69              48.5           21.4           30.1
+ Q2.3 103  2.82              40.8           33.0           26.2
+ Q2.4 103  3.01              32.0           34.0           34.0
+ Q2.5 103  2.98              35.0           26.2           38.8
+ Q2.6 103  2.78              41.7           35.0           23.3
+ Q2.7 103  2.64              44.7           36.9           18.4
+ Q2.8 103  2.59              52.4           25.2           22.3
+ Q2.9 103  2.29              69.9           15.5           14.6
+Q2.10 103  3.09              35.9           14.6           49.5
+Q2.11 103  3.17              34.0           14.6           51.5
+ Q3.1 103  3.12              29.1           26.2           44.7
+ Q3.2 103  3.19              25.2           27.2           47.6
+ Q3.3 103  2.99              39.8           17.5           42.7
+ Q3.4 103  3.01              39.8           13.6           46.6
+ Q3.5 103  2.82              44.7           21.4           34.0
+ Q3.6 103  2.83              45.6           18.4           35.9
+ Q3.7 103  2.93              39.8           17.5           42.7
+ Q3.8 103  2.97              37.9           20.4           41.7
+ Q4.1 103  3.77               6.8           14.6           78.6
+ Q4.2 103  3.80               5.8           15.5           78.6
+ Q4.3 103  2.72              50.5           21.4           28.2
+ Q4.4 103  2.64              52.4           21.4           26.2
+ Q5.1 102  3.25              27.5           26.5           46.1
+Pearson correlations between the composite scores:
+                  Accuracy  Transparency  Trust  Acceptance  Trust_Baseline  Trust_Disclosure
+Accuracy              1.00          0.28   0.70        0.54           -0.00              0.47
+Transparency          0.28          1.00   0.36        0.23            0.23              0.27
+Trust                 0.70          0.36   1.00        0.54           -0.06              0.60
+Acceptance            0.54          0.23   0.54        1.00            0.26              0.67
+Trust_Baseline       -0.00          0.23  -0.06        0.26            1.00              0.19
+Trust_Disclosure      0.47          0.27   0.60        0.67            0.19              1.00
+
+======================================================================
+VALIDATION SUMMARY
+  - 1 respondent(s) gave the identical raw answer to Q2.1-Q2.9 (DROP_STRAIGHTLINERS = False)
+  - small group kept as is (no merging): Age group / 60+ n = 1 - interpret with great caution
+  - small group kept as is (no merging): Education / Other n = 1 - interpret with great caution
+  - small group kept as is (no merging): General AI tool experience (Q1.4) / Rare/never n = 5 - interpret with great caution
+  - small group kept as is (no merging): AI health tool use (Q1.5) / Regular n = 9 - interpret with great caution
+
+Done. Saved: results.txt, tables.xlsx, fig_*.png (incl. demographics, item agreement, Section 5, correlation matrix, RQ4 group means), open_text_responses.csv
+ caution
+
+Done. Saved: results.txt, tables.xlsx, fig_*.png (incl. demographics, item agreement, Section 5, correlation matrix, RQ4 group means), open_text_responses.csv
