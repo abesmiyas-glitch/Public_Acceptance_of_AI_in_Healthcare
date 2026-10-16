@@ -28,6 +28,7 @@ thesis-ai-healthcare-acceptance/
 ├── requirements.txt
 ├── src/
 │   └── thesis_analysis.py      # the complete analysis (RQ1 to RQ5)
+│   └── Responses.csv
 ├── questionnaire/
 │   └── README.md               # add the questionnaire here (e.g. questionnaire.pdf)
 ├── data/
@@ -40,8 +41,8 @@ thesis-ai-healthcare-acceptance/
 │   └── fig_*.png               # 9 figures: profile, distributions, item agreement, diagnostics,
 │                               # correlation matrix, professions, group means, disclosure, Section 5
 └── docs/
-    └── codebook.md             # coding, reverse-scored items, composites, categories
-
+│    └── codebook.md             # coding, reverse-scored items, composites, categories
+└── Responses.csv
 ```
 
 ## What the script does
