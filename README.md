@@ -28,7 +28,7 @@ thesis-ai-healthcare-acceptance/
 ├── requirements.txt
 ├── src/
 │   └── thesis_analysis.py      # the complete analysis (RQ1 to RQ5)
-│   └── Responses.csv
+│   └── responses.csv
 ├── questionnaire/
 │   └── README.md               # add the questionnaire here (e.g. questionnaire.pdf)
 ├── data/
@@ -42,7 +42,7 @@ thesis-ai-healthcare-acceptance/
 │                               # correlation matrix, professions, group means, disclosure, Section 5
 └── docs/
 │    └── codebook.md             # coding, reverse-scored items, composites, categories
-└── Responses.csv
+└── responses.csv
 ```
 
 ## What the script does
@@ -67,9 +67,9 @@ The script also checks that all 31 columns match the questionnaire wording, list
 2. The anonymised data are in `data/responses_anonymised.csv` (see `data/README.md`).
 3. From the repository root, run:
    ```bash
-   python src/thesis_analysis.py --data src/Responses.csv --out results
+   python src/thesis_analysis.py --data src/responses.csv --out results
    ```
-   The script prints and saves everything to `results/`. Settings (for example `DROP_STRAIGHTLINERS`) are at the top of `src/thesis_analysis.py`.
+   The script prints and saves everything to the file. Settings (for example `DROP_STRAIGHTLINERS`) are at the top of `src/thesis_analysis.py`.
 
 The exact package versions used for the thesis are listed in the `Run_info` sheet of `results/tables.xlsx`.
 
