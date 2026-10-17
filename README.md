@@ -1,6 +1,6 @@
 # thesis-ai-healthcare-acceptance
 
-Supporting materials for the bachelor thesis **"Public Acceptance of AI-Supported Healthcare"** ([Yasmin Seba], IU International University, 2026): the survey instrument, the analysis script and the results behind Chapter 4.
+Supporting materials for the bachelor thesis **"Public Acceptance of AI-Supported Healthcare"** (Yasmin Seba, IU International University, 2026): the survey instrument, the analysis script and the results behind Chapter 4.
 
 ## Abstract
 
